@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 009 - Nacionalidade</title>
+    <style>
+
+        input#país_natal {
+            margin-bottom: 10px;
+            width: 250px;
+        }
+
+        input#país_residencia {
+            margin-bottom: 10px;
+            width: 184px;
+        }
+
+        input#verificar {
+            font-size: 18px;
+            margin-bottom: 10px;
+            margin-top: 5px;
+            border: 1px solid
+        }
+
+        body {
+            font: normal 20px Times;
+            background: rgb(130, 212, 236);
+        }
+
+        div#nacionalidade {
+            background-color: rgb(170, 164, 164);
+            font-size: 20px;
+            width: 200px;
+            margin-top: 5px;
+            border: 1px solid
+        }
+
+    </style>
+</head>
+<body>
+
+    <h1>Checando nacionalidade</h1>
+
+    País natal: <input type="text" name="país_natal" id="país_natal">
+    </br>País de residência: <input type="text" name="país_residencia" id="país_residencia">
+    </br><input type="button" value="Verificar nacionalidade" id='verificar' onclick=verificar_nacionalidade()>
+    
+    <div id='nacionalidade'>Situação: </div>
+
+    <script>
+        function verificar_nacionalidade(){
+            var país_natal = document.getElementById('país_natal')
+            var país_residencia = document.getElementById('país_residencia')
+            if (país_natal.value.toLowerCase() == país_residencia.value.toLowerCase()){
+                document.getElementById('nacionalidade').innerHTML = 'Situação: <strong>Nativo</strong>.'
+            } else {
+                document.getElementById('nacionalidade').innerHTML = 'Situação: <strong>Estrangeiro</strong>.'
+            }
+        }        
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 010 - DETRAN</title>
+    <style>
+        input#txtvel {
+            width: 50px;
+        }
+
+        input#button_input {
+            margin-left: 10px;
+        }
+
+        div#resultado{
+            font: normal 20px Arial;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Sistema de Multas</h1>
+    Velocidade do carro: <input type="number" name="txtvel" id="txtvel">Km/h
+    <input type="button" value="Verificar" id='button_input' onclick=calcular()>
+    <div id='resultado'>Resultado: </div>
+
+    <script>
+        function calcular() {
+            var txtvel = document.getElementById('txtvel')
+            var velocidade = Number(txtvel.value)
+            if (velocidade > 60){
+                document.getElementById('resultado').innerHTML = `Resultado: <strong>ultrapassou</strong> o limite de velocidade em ${velocidade - 60}Km/h. <i>Sujeito a multa</i>.</br>`
+                document.getElementById('resultado').innerHTML += "Dirija com mais cuidado!"
+            } else{
+                document.getElementById('resultado').innerText = 'Resultado: não ultrapassou o limite de velocidade.'
+            }
+        }
+    </script>
+</body>
+</html>

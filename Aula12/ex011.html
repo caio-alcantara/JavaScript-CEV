@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 011 - Voto</title>
+    <style>
+        body {
+            background-color: rgb(139, 190, 224);
+            font: normal 20px Times
+        }
+
+        input#idade {
+            margin-bottom: 10px;
+            
+        }
+
+        div#resultado {
+            background-color: rgb(158, 154, 154);
+            width: 250px;
+        }   
+
+    </style>
+</head>
+<body>
+    <h1>Checagem da obrigatoriedade do voto:</h1>
+    Idade: <input type="number" name="idade" id="idade"> anos
+    <input type="button" value="Verificar" onclick=verificar()>
+    <div id=resultado>Situação: </div>
+
+    <script>
+        function verificar() {
+            idadetxt = document.getElementById('idade')
+            idade = Number(idadetxt.value)
+
+            if (idade < 16) {
+                document.getElementById('resultado').innerHTML = 'Situação: <strong>Não vota</strong>.'
+            } else if (idade < 18 || idade >= 65) {
+                document.getElementById('resultado').innerHTML = 'Situação: <strong>Voto opcional</strong>.'
+            } else {
+                document.getElementById('resultado').innerHTML = 'Situação: <strong>Voto obrigatório</strong>.'
+            }
+        }
+    </script>
+</body>
+</html>
